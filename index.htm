@@ -1,28 +1,33 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 
 <title>giphy.js demo</title>
 <script src="giphy.js"></script>
 
-<script type="text/javacript">
-    
-</script>
+<script language="JavaScript" type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js">
+        $(function() {
+            $('a#process_input').bind('click', function()
+            {
+                $.getJSON('/chartDisplay'. {
+                    username: $('input[name=="username"]').val(),
+                }, function(data){
+                    $("#result").text(data.result);
+                });
+                return false;
+                });            
+        });</script>
 
 <style>
-
 <link href="https://fonts.googleapis.com/css?family=Quicksand|Wire+One" rel="stylesheet">
-
 div.container {
     width: 100%;
 }
-
 header {
     text-align: left;
     font-family: 'Quicksand';
     font-size: 25px;
 }
-
 section1 {
     font-family: 'Wire One';
     font-size: 20px;
@@ -31,7 +36,6 @@ section1 {
     padding: 1em;
     overflow: hidden;
 }
-
 footer {
     padding: 1em;
     color: #ebf5fb;
@@ -41,14 +45,12 @@ footer {
     font-family: 'Wire One';
     font-size: 25px;
 }
-
 nav {
     float: left;
     max-width: 170px;
     margin: 0;
     padding: 1em;
 }
-
 </style>
 </head>
 <body style="color:#273746; background-color:#ebf5fb;">
@@ -63,36 +65,26 @@ nav {
 <section1 style="float:left; width:500px;">
   <link href='https://fonts.googleapis.com/css?family=Wire+One' rel='stylesheet'>
   <h1> translate emotions:</h1>
-  <form>
-        <form action="">
-        <textarea rows="15" cols="60" id="txtvalue"> </textarea>
-  <br>
-  <br>
-  <input type="button" value="Go!" />
-  <input type="button" value="Gif me!" id="button" onclick="myFunction()" />
-</form> 
-    </form>
+  <form class="form-signin" action="/chartDisplay" method="post" role="form">
+        <link href='https://fonts.googleapis.com/css?family=Wire+One' rel='stylesheet'>
+            <textarea rows="10" cols="60"input type="text" name="username" class="form-control" placeholder="Your text here." required autofocus></textarea>
+        <form>
+            <a href = 'chartDisplay' id = process_input><button class = 'btn btn-default'>Submit</button></a></form>
+            <p id = result>...</p>
+         </form>
  <br>
  </br>
 </section1>
 
-<section style="float:left; width:200px;">
-    <iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vREaV8GG3fRGxGkZWSebfD2S3_oWwfweEyvsS9KinQx7_PClQfPgDqmgHIdWL8pwmeOdPNzUejPQApb/pubchart?oid=703804351&amp;format=interactive"></iframe>
-    <br>
-    <br>
-    <section>
-      <span id = "giphyme"></span>
-    </section>
-</section>
 
 <br>
 <br>
 
 
 <footer> 
-    <a href="index.htm" style="color:#f5b7b1;">Home</a> 	&nbsp;	&nbsp;	&nbsp;	&nbsp;
-    <a href="about.htm" style="color:#f5b7b1;">About</a> 	&nbsp;	&nbsp;	&nbsp;	&nbsp;
-    <a href="contact.htm" style="color:#f5b7b1;">Contact Us</a> 	&nbsp;	&nbsp;	&nbsp;	&nbsp;
+    <a href="index.htm" style="color:#f5b7b1;">Home</a>   &nbsp;  &nbsp;  &nbsp;  &nbsp;
+    <a href="about.htm" style="color:#f5b7b1;">About</a>  &nbsp;  &nbsp;  &nbsp;  &nbsp;
+    <a href="contact.htm" style="color:#f5b7b1;">Contact Us</a>   &nbsp;  &nbsp;  &nbsp;  &nbsp;
     <img src="giphylogo.gif" style="width:104px;height:30px;">  &nbsp;  &nbsp;  &nbsp;  &nbsp;
     Copyright &copy; Siyuan Liu, Faazilah Mohamed, Saniyah Shaikh
 </footer>
